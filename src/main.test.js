@@ -39,9 +39,9 @@ describe('Environmental Check', () => {
     } catch (error) {
       listOfExtensions = null;
     }
-listOfExtensions = childProcess.execSync(
-  '"D:\\Програми\\Microsoft VS Code\\bin\\code.cmd" --list-extensions --show-versions',
-).toString();
+// listOfExtensions = childProcess.execSync(
+//   '"D:\\Програми\\Microsoft VS Code\\bin\\code.cmd" --list-extensions --show-versions',
+// ).toString();
     try {
       childProcess.execSync('systeminfo');
       OS = 'Windows';
@@ -85,7 +85,8 @@ listOfExtensions = childProcess.execSync(
         .toBeTruthy();
     } else {
       const VSCodeVersion = childProcess.execSync(
-  '"D:\\Програми\\Microsoft VS Code\\bin\\code.cmd" -v',
+        'code -v',
+  // '"D:\\Програми\\Microsoft VS Code\\bin\\code.cmd" -v',
 ).toString();
 
       expect(!!VSCodeVersion)
